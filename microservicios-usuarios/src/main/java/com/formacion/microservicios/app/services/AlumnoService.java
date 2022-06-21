@@ -1,17 +1,12 @@
 package com.formacion.microservicios.app.services;
 
-import java.util.Optional;
+import java.util.List;
 
-import com.formacion.microservicios.app.usuarios.models.entity.Alumno;
+import com.formacion.microservicios.commons.alumnos.models.entity.Alumno;
+import com.formacion.microservicios.commons.services.CommonService;
 
-public interface AlumnoService {
+public interface AlumnoService extends CommonService<Alumno> {
 	
-	public Iterable<Alumno> findAll();
-	
-	public Optional <Alumno> findById(Long id);
-	
-	public Alumno save(Alumno alumno);
-	
-	public void deleteById(Long id);
+	public List<Alumno> findByNombreOrApellido(String term);
 
 }
